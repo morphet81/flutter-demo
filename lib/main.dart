@@ -1,19 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:appcenter/appcenter.dart';
-import 'package:appcenter_analytics/appcenter_analytics.dart';
-import 'package:appcenter_crashes/appcenter_crashes.dart';
 
 Future<void> main() async {
   runApp(MyApp());
-
-  final ios = defaultTargetPlatform == TargetPlatform.iOS;
-  var app_secret = ios
-      ? "378801e2-56be-4ff1-bdc2-a1214d9d935e"
-      : "8c7d3fba-c4d4-4c24-9c48-77efc7333806";
-
-  await AppCenter.start(
-      app_secret, [AppCenterAnalytics.id, AppCenterCrashes.id]);
 }
 
 class MyApp extends StatelessWidget {
